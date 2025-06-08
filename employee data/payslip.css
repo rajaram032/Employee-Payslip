@@ -1,0 +1,98 @@
+body {
+  font-family: Arial, sans-serif;
+  background: #fff;
+
+  color: #333;
+}
+
+h2 {
+  text-align: center;
+  margin: 25px;
+}
+
+.payslip-container {
+  background-color: #ffefbd;
+  padding: 20px;
+  border-radius: 8px;
+  max-width: 100%;
+  height: 85vh;
+  margin: 0 20px;
+  display: grid;
+  gap: 20px;
+}
+
+/* Employee Info section */
+
+.employee-info {
+  display: flex;
+  justify-content: space-around;
+}
+
+.employee-row {
+  display: flex;
+  padding: 15px;
+}
+
+.employee-row .label {
+  font-weight: bold;
+  min-width: 150px;
+}
+.info-right .employee-row .label {
+  font-weight: bold;
+  min-width: 60px;
+}
+.employee-row .value {
+  flex: 1;
+  align-self: center;
+  font-size: 18px;
+}
+/* Table styling */
+.payslip-table table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.payslip-table th {
+  background-color: #f1c40f;
+  padding: 10px;
+  border: 1px solid #ccc;
+  text-align: center;
+  font-weight: bold;
+}
+
+.payslip-table td {
+  background-color: #ecc32d41;
+  padding: 20px;
+  border: 1px solid #ccc;
+  text-align: center;
+}
+
+/* Total Earnings */
+.total-earnings {
+  text-align: right;
+  font-size: 18px;
+  font-weight: bold;
+  margin-top: 10px;
+  word-spacing: 5px;
+}
+#download_btn {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+}
+#download_btn button {
+  width: 150px;
+  padding: 5px 5px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+#download_btn button:nth-child(1) {
+  font-weight: bold;
+  background-color: #ffd43b;
+  color: white;
+}
+#download_btn button:nth-child(2) {
+  background-color: #333;
+  color: white;
+}

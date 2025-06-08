@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payroll</title>
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="payslip.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+
+
+</head>
+<script src="payroll.js">    </script>
+<body onload="userLoginCheck()">
+    <div class="container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+
+            <nav>
+                <a href="index.html" class="active">
+                    <img src="Payslip Images/Overview.png" alt="" />
+                    <span>Overview</span>
+                </a>
+                <a href="payroll.html"><img src="Payslip Images/Payroll.png" alt="" />
+                    <span>Payroll</span></a>
+                <a href="#"><img src="Payslip Images/Payroll.png" alt="" />
+                    <span>Payslip</span></a>
+            </nav>
+        </aside>
+        <section>
+            <h2>Payslip Details</h2>
+
+            <div class="payslip-container" id="payslip_content">
+
+                <!-- Employee Information -->
+
+                <div class="employee-info">
+                    <div class="info-left">
+                        <div class="employee-row">
+                            <p class="label"><strong>Employee Name</strong></p>
+                            <p id="name" class="value"></p>
+                        </div>
+                        <div class="employee-row">
+                            <p class="label"><strong>Employee I'D</strong> </p>
+                            <p id="id" class="value"></p>
+                        </div>
+                        <div class="employee-row">
+                            <p class="label"><strong>Role</strong> <span></span></p>
+                            <p id="role" class="value"></p>
+                        </div>
+                    </div>
+                    <div class="info-right">
+                        <div class="employee-row">
+                            <p class="label"><strong>Date</strong> <span></span></p>
+                            <p id="date" class="value"></p>
+                        </div>
+                        <div class="employee-row">
+                            <p class="label"><strong>Month</strong> <span></span></p>
+                            <p id="month" class="value"></p>
+                        </div>
+
+                    </div>
+                </div>
+
+
+                <!-- Earnings Table -->
+                <div class="payslip-table">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th colspan="3">Employee Details</th>
+                                <th colspan="3">Days</th>
+                                <th>Additions</th>
+                                <th>Deductions</th>
+                            </tr>
+                            <tr>
+                                <th>Employee I’D</th>
+                                <th>Employee Name</th>
+                                <th>Basic Salary</th>
+                                <th>Per Day</th>
+                                <th>Present Days</th>
+                                <th>Leave Days</th>
+                                <th></th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td id="emp_id"></td>
+                                <td id="emp_name"></td>
+                                <td id="basic_salary"></td>
+                                <td id="per_day"></td>
+                                <td id="present"></td>
+                                <td id="leave"></td>
+                                <td id="additions"></td>
+                                <td id="deductions"></td>
+
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- Total Earnings -->
+                <div class="total-earnings" id="total_earnings">
+                </div>
+                <div id="download_btn">
+                    <button>Save</button>
+                    <button id="download_btn2">Download</button>
+                </div>
+
+            </div>
+        </section>
+    </div>
+     
+    <script src="payslip.js"></script>
+</body>
+
+</html>

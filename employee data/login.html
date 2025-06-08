@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login Page</title>
+    <link rel="stylesheet" href="login.css" />
+</head>
+
+<body>
+    <div class="container">
+        <div class="left">
+            <img src="Payslip Images/loginLogo. Gif.gif" alt="Login Illustration" />
+        </div>
+        <div class="right">
+            <h2>Login</h2>
+            <form class="login-form" action="#" autocomplete="on">
+
+
+                <input type="text" id="username" placeholder="Enter your Name" required />
+
+
+
+                <input type="password" id="password" placeholder="Password" required />
+
+
+                <a href="" class="forgot-password">Forgot Password?</a>
+
+                <button type="submit" id="myButton" onclick="userData(event)">Login</button>
+                <div class="icons">
+                    <img src="Payslip Images/mail.png" alt="" class="name_icon">
+                    <img src="Payslip Images/Password.png" alt="" class="pass_icon">
+                    <img src="Payslip Images/hide.png" alt="" class="hide_icon">
+                </div>
+            </form>
+        </div>
+    </div>
+    <script>
+
+
+
+        function userData(event) {
+            event.preventDefault(); // ⛔ Stops form submission
+
+            let userName = document.getElementById("username").value;
+            let userPassword = document.getElementById("password").value;
+
+            sessionStorage.setItem("username", userName);
+            sessionStorage.setItem("password", userPassword);
+
+            if (userName && userPassword) {
+                window.location.href = 'index.html';
+            } else {
+                alert("Please enter both username and password.");
+            }
+        }
+
+    </script>
+</body>
+
+</html>

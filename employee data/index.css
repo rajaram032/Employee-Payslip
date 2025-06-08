@@ -1,0 +1,285 @@
+/* Reset */
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+}
+/* Layout */
+
+.container {
+  display: grid;
+  grid-template-columns: 250px 2fr;
+  grid-template-rows: 100vh;
+}
+/* Sidebar */
+
+.sidebar {
+  background-color: #3f5158;
+  color: white;
+  padding: 2rem 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.sidebar nav {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.sidebar nav a {
+  color: white;
+  text-decoration: none;
+  font-size: 1.1rem;
+  padding: 0.5rem;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+}
+
+.sidebar nav a img {
+  width: 15px;
+}
+
+.sidebar nav a.active {
+  color: #ffd43b;
+}
+/* Main Content */
+
+.main-content {
+  display: grid;
+  grid-template-rows: auto auto 1fr;
+  gap: 1rem;
+  padding: 0 30px;
+  /* background-color: #fef6e4; */
+}
+/* Header */
+
+.header {
+  display: grid;
+  grid-template-columns: 3fr 1fr auto;
+  align-items: center;
+   background-color: #ffefbd;
+  padding: 30px 10px;
+  padding: 15px 20px;
+  border-radius: 8px;
+  margin-top: 30px;
+}
+
+.greeting {
+  font-size: 1.3rem;
+  font-weight: bold;
+}
+
+.search-bar {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.search-bar input {
+  padding: 0.7rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  margin-right: 60px;
+}
+
+.search-bar a img {
+  position: absolute;
+  width: 16px;
+  right: 75px;
+  top: 13px;
+}
+
+.profile-icons {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  margin-right: 25px;
+}
+
+.notification {
+  width: 25px;
+}
+
+.profile-pic {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+#logout {
+    font-size: 15px;
+  padding: 8px 12px;
+  letter-spacing: 1px;
+  font-weight: 400;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  width: 70px;
+  background-color: #f8cc14;
+  color: white;
+}
+#logout:hover{
+    color: #f8cc14;
+    background-color: #3f5158;
+}
+/* Info Cards */
+
+.content {
+ background-color: #ffefbd;
+  padding: 30px 10px;
+  height: 75vh;
+}
+
+.info-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 1rem;
+}
+
+.card {
+  background-color: #f8cc14;
+  padding: 1rem;
+  text-align: center;
+  border-radius: 8px;
+  font-weight: bold;
+  font-size: 1.1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+}
+
+.card img {
+  width: 50px;
+  background-color: #3f5158;
+  /* filter: brightness(0) ; */
+  padding: 10px;
+  border-radius: 50%;
+}
+/* Bottom Section */
+
+.bottom-section {
+  /* display: grid;
+  grid-template-columns: 380px 450px;
+  gap: 6rem; */
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+ 
+}
+/* Calendar */
+
+.calendar {
+  padding: 1rem;
+  border-radius: 8px;
+
+  width: 390px;
+ 
+}
+.calendar .icon{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 20px;
+    position: relative;
+    right: 50px;
+    top: 35px;
+    cursor: pointer;
+}
+.calendar .icon i{
+   border: 2px solid #ffd43b ;
+    border-radius: 50%;
+    padding: 5px;
+    font-size: 8px;
+    text-align: center;
+}
+
+.calender_info {
+  background-color: #ecc32d41;
+  padding: 10px;
+  border-radius: 5px;
+
+}
+#calender_info{
+    margin: 5px;
+}
+.calendar table {
+  width: 100%;
+  height: 180px;
+  border-collapse: collapse;
+  text-align: center;
+  
+}
+
+.calendar th,
+.calendar td {
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+/* .calendar td:hover {
+  background-color: #ffd43b;
+} */
+.today {
+  background-color:  #ffd43b;
+  color: white;
+  border-radius: 50%;
+  font-weight: bold;
+}
+
+
+/* Meetings */
+
+.meetings {
+  padding: 1rem;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  width: 400px;
+}
+
+.meetings-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.5rem;
+  margin-top: 0.5rem;
+}
+.meetings-header a{
+    color: red;
+    text-decoration: none;
+}
+
+.meeting_info {
+  background: #ff7f1638;
+  
+  padding: 5px;
+  border-radius: 5px;
+}
+
+.meeting {
+   padding: 0.3rem;
+  border-radius: 8px;
+ 
+  border: 1px solid rgba(0, 0, 0, 0.39);
+  margin: 12px 8px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-right: 20px;
+  padding-left: 20px;
+}
+
+.meeting div p:nth-child(2) {
+  font-size: 10px;
+  text-align: center;
+}

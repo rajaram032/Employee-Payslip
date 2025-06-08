@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payroll</title>
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="payroll.css">
+    <!-- Add inside your <head> tag -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
+</head>
+ <script src="payroll.js">    </script>
+<body onload="userLoginCheck()">
+    <div class="container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+
+            <nav>
+                <a href="index.html" class="active">
+                    <img src="Payslip Images/Overview.png" alt="" />
+                    <span>Overview</span>
+                </a>
+                <a href="#"><img src="Payslip Images/Payroll.png" alt="" />
+                    <span>Payroll</span></a>
+                <a onclick="check()"><img src="Payslip Images/Payroll.png" alt="" />
+                    <span>Payslip</span></a>
+            </nav>
+        </aside>
+
+        <section id="payroll">
+            <div class="payroll_header">
+                <h2>Payroll Details</h2>
+
+                <div class="top-buttons">
+                    <select class="this-month" id="current_month" onchange="countWeekdaysInMonth(this.value)">
+                        <option value="">Select Month 📅</option>
+                        <option value="0">January</option>
+                        <option value="1">February</option>
+                        <option value="2">March</option>
+                        <option value="3">April</option>
+                        <option value="4">May</option>
+                        <option value="5">June</option>
+                        <option value="6">July</option>
+                        <option value="7">August</option>
+                        <option value="8">September</option>
+                        <option value="9">October</option>
+                        <option value="10">November</option>
+                        <option value="11">December</option>
+                    </select>
+                    <button class="download" onclick="pdfDownload() ">Download</button>
+                </div>
+            </div>
+
+            <form class="payroll-form" id="myForm" action="#">
+
+                <div class="form-grid">
+
+                    <div class="form-group">
+                        <label>Employee Name</label>
+                        <input type="text" id="employeeName" name="name" onchange="getInputValues()" required />
+                    </div>
+
+                    <div class="form-group">
+                        <label>Employee Role</label>
+                        <select name="role" id="employeeRole" name="role" onchange="getInputValues()">
+                            <option value="">- Select Employee Role -</option>
+                            <option value="Web Developer">Web Developer</option>
+                            <option value="Software Tester">Software Tester</option>
+                            <option value="Data Analyst">Data Analyst</option>
+                            <option value="UI/UX Designer">UI/UX Designer</option>
+                        </select>
+
+                    </div>
+
+                    <div class="form-group">
+                        <label>Employee I'd</label>
+                        <input type="number" id="employeeId" name="id" onchange="getInputValues()" />
+                    </div>
+
+                    <div class="form-group">
+                        <label>Date</label>
+                        <input type="date" id="date" name="date" />
+                    </div>
+
+                    <div class="form-group">
+                        <label>Basic Salary</label>
+                        <input type="number" id="basicSalary" name="basic_salary" />
+                    </div>
+
+                    <div class="form-group">
+                        <label>Total Salary</label>
+                        <input type="number" id="totalSalary" name="total_salary" onchange="getInputValues()"
+                            readonly />
+                    </div>
+
+                    <div class="form-group">
+                        <label>No of Working Days</label>
+                        <input type="number" id="workingDays" name="working_days" readonly
+                            onchange="getInputValues()" />
+                    </div>
+
+                    <div class="form-group">
+                        <label>Total Present Days</label>
+                        <input type="number" id="presentDays" name="present_days" onchange="getDeductionValues()" />
+                    </div>
+
+                    <div class="form-group">
+                        <label>Total Leave Days</label>
+                        <input type="number" id="leaveDays" name="leave_days" readonly onchange="getInputValues()" />
+                    </div>
+
+                    <div class="form-group">
+                        <label>Additions</label>
+                        <input type="number" id="additions" name="additions" onchange="getDeductionValues()" />
+                    </div>
+
+                    <div class="form-group">
+                        <label>Deductions</label>
+                        <input type="number" id="deductions" name="deductions" readonly />
+                    </div>
+
+                </div>
+
+                <div class="form-buttons">
+                    <button class="submit" onclick="formaValidation(event)">Submit Payroll</button>
+                    <button type="reset" class="cancel ">Cancel</button>
+                </div>
+
+            </form>
+        </section>
+    </div>
+   
+
+</body>
+
+</html>

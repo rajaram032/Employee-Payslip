@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Employee Dashboard</title>
+    <link rel="stylesheet" href="index.css" />
+    <script src="https://kit.fontawesome.com/64b193424d.js" crossorigin="anonymous"></script>
+
+</head>
+ <script src="payroll.js">    </script>
+<body onload="userLoginCheck()">
+
+
+    <div class="container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+
+            <nav>
+                <a href="#" class="active">
+                    <img src="Payslip Images/Overview.png" alt="" />
+                    <span>Overview</span>
+                </a>
+                <a href="payroll.html"><img src="Payslip Images/Payroll.png" alt="" />
+                    <span>Payroll</span></a>
+                <a onclick="check()"><img src="Payslip Images/Payroll.png" alt="" />
+                    <span>Payslip</span></a>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Header -->
+            <header class="header">
+                <div class="greeting" id="greeting"></div>
+                <div class="search-bar">
+                    <input type="text" placeholder="Search" />
+                    <a href=""> <img src="Payslip Images/search.png" alt="" /></a>
+                </div>
+                <div class="profile-icons">
+                    <img src="Payslip Images/notification.png" alt="Notification" class="notification" />
+                    <img src="Payslip Images/Profile.png" alt="User" class="profile-pic" />
+                    <button id="logout" onclick="logout()">Logout</button>
+                </div>
+
+            </header>
+
+            <div class="content">
+                <!-- Info Cards -->
+                <section class="info-cards">
+                    <div class="card">
+                        <img src="Payslip Images/Total.png" alt="" />
+                        <p>Total Employees</p>
+                    </div>
+                    <div class="card">
+                        <img src="Payslip Images/no of leave.png" alt="" />
+                        <p>Number Of Leave</p>
+                    </div>
+                    <div class="card">
+                        <img src="Payslip Images/add.png " alt="" />
+                        <p>New Employee’s</p>
+                    </div>
+                    <div class="card">
+                        <img src="Payslip Images/holiday.png" alt="" />
+                        <p>Holiday of this Year</p>
+                    </div>
+                </section>
+
+                <!-- Calendar and Meetings -->
+                <section class="bottom-section">
+                    <!-- Calendar -->
+                    <div class="calendar">
+
+                        <h3 id="">Calendar</h3>
+                        <div class="icon">
+                            <i class="fa-solid fa-less-than"></i>
+                            <i class="fa-solid fa-greater-than"></i>
+                        </div>
+                        <div class="calender_info">
+                            <h3 id="calender_info"></h3>
+                            <table id="calender">
+                                <thead id="days"></thead>
+                                <tbody id="dates"></tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <!-- Upcoming Meetings -->
+                    <div class="meetings">
+                        <div class="meetings-header">
+                            <h3>Upcoming Meetings</h3>
+                            <a href="#">View All</a>
+                        </div>
+                        <div class="meeting_info">
+                            <div class="meeting">
+                                <p> Client Meeting - 10:00 AM</p>
+                                <div>
+                                    <p>Wed</p>
+                                    <p>May 17</p>
+                                </div>
+                            </div>
+                            <div class="meeting">
+                                <p> Team Meeting - 11:00 AM </p>
+                                <div>
+                                    <p>Wed</p>
+                                    <p>Wed 17</p>
+                                </div>
+                            </div>
+                            <div class="meeting">
+                                <p> HR Interview - 2:00 PM</p>
+                                <div>
+                                    <p>Mon</p>
+                                    <p>May 20</p>
+                                </div>
+                            </div>
+                            <div class="meeting">
+                                <p> Client Meeting - 4:00 PM</p>
+                                <div>
+                                    <p>Mon</p>
+                                    <p>May 20</p>
+                                </div>
+                            </div>
+
+
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </main>
+    </div>
+    <script src="index.js"></script>
+   
+</body>
+
+</html>
