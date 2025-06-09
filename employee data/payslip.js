@@ -38,16 +38,12 @@ document.getElementById("month").innerHTML = `: ${currentMonthName}`;
 document.getElementById("emp_id").innerHTML = employeeId;
 document.getElementById("emp_name").innerHTML = name;
 document.getElementById("basic_salary").innerHTML = "₹" + basicSalary;
-document.getElementById("per_day").innerHTML = "₹" + basicSalary / workingDays;
+document.getElementById("per_day").innerHTML = "₹" + (basicSalary / workingDays).toFixed(2);
 document.getElementById("present").innerHTML = presentDays;
 document.getElementById("leave").innerHTML = leaveDays;
 document.getElementById("additions").innerHTML = "₹" + additions;
 document.getElementById("deductions").innerHTML = "₹" + deductions;
-document.getElementById(
-  "total_earnings"
-).innerHTML = `<strong> Total Earnings: </strong> ₹${Number(
-  basicSalary
-).toLocaleString()}`;
+document.getElementById("total_earnings").innerHTML = `<strong> Total Earnings: </strong> ₹${Number(totalSalary).toLocaleString()}`;
 
 document.querySelector("#download_btn2").addEventListener("click", () => {
   const payslip = document.getElementById("payslip_content");
