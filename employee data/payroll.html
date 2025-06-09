@@ -11,8 +11,9 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
 
 </head>
- <script src="payroll.js">    </script>
-<body onload="userLoginCheck()">
+<script src="payroll.js">    </script>
+
+<body onload="userLoginCheck(); toggleFormFields(true)">
     <div class="container">
         <!-- Sidebar -->
         <aside class="sidebar">
@@ -49,8 +50,11 @@
                         <option value="10">November</option>
                         <option value="11">December</option>
                     </select>
-                    <button class="download" onclick="pdfDownload() ">Download</button>
+                    <button class="download" onclick="pdfDownload()">Download</button>
                 </div>
+            </div>
+            <div id="month_alert_msg">
+                <h4>Select month to create payroll</h4>
             </div>
 
             <form class="payroll-form" id="myForm" action="#">
@@ -59,12 +63,12 @@
 
                     <div class="form-group">
                         <label>Employee Name</label>
-                        <input type="text" id="employeeName" name="name" onchange="getInputValues()" required />
+                        <input type="text" id="employeeName" name="name" onfocus="checkMonth()" onblur="checkMonth()" />
                     </div>
 
                     <div class="form-group">
                         <label>Employee Role</label>
-                        <select name="role" id="employeeRole" name="role" onchange="getInputValues()">
+                        <select name="role" id="employeeRole" name="role" onfocus="checkMonth()">
                             <option value="">- Select Employee Role -</option>
                             <option value="Web Developer">Web Developer</option>
                             <option value="Software Tester">Software Tester</option>
@@ -76,7 +80,7 @@
 
                     <div class="form-group">
                         <label>Employee I'd</label>
-                        <input type="number" id="employeeId" name="id" onchange="getInputValues()" />
+                        <input type="number" id="employeeId" name="id" />
                     </div>
 
                     <div class="form-group">
@@ -86,19 +90,17 @@
 
                     <div class="form-group">
                         <label>Basic Salary</label>
-                        <input type="number" id="basicSalary" name="basic_salary" />
+                        <input type="number" id="basicSalary" name="basic_salary" onchange="getDeductionValues()"/>
                     </div>
 
                     <div class="form-group">
                         <label>Total Salary</label>
-                        <input type="number" id="totalSalary" name="total_salary" onchange="getInputValues()"
-                            readonly />
+                        <input type="number" id="totalSalary" name="total_salary" readonly />
                     </div>
 
                     <div class="form-group">
                         <label>No of Working Days</label>
-                        <input type="number" id="workingDays" name="working_days" readonly
-                            onchange="getInputValues()" />
+                        <input type="number" id="workingDays" name="working_days" readonly />
                     </div>
 
                     <div class="form-group">
@@ -108,7 +110,7 @@
 
                     <div class="form-group">
                         <label>Total Leave Days</label>
-                        <input type="number" id="leaveDays" name="leave_days" readonly onchange="getInputValues()" />
+                        <input type="number" id="leaveDays" name="leave_days" readonly />
                     </div>
 
                     <div class="form-group">
@@ -125,13 +127,13 @@
 
                 <div class="form-buttons">
                     <button class="submit" onclick="formaValidation(event)">Submit Payroll</button>
-                    <button type="reset" class="cancel ">Cancel</button>
+                    <button type="reset" onclick="clearMonth()" class="cancel ">Cancel</button>
                 </div>
 
             </form>
         </section>
     </div>
-   
+
 
 </body>
 
